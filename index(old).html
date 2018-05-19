@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> Component Graph Editor </title>
+<style type="text/css">
+body {
+	background: silver;
+}
+
+#wrap {
+	position: relative;
+	top: 0;
+	left: 50%;
+	margin-top: 25px;
+	margin-left: -410px;
+	width: 820px;
+}
+
+#main {
+	
+}
+
+#resolution {
+	float: right;
+	margin-right: 10px;
+}
+
+.clear {
+	clear: both;
+}
+
+#footer {
+	margin-top: 50px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+function changeResolution( resolution )
+{
+	document.getElementById("applet1").width = parseInt(resolution.options[resolution.selectedIndex].value, 10);
+	document.getElementById("applet1").height = resolution.options[resolution.selectedIndex].value*3/4 ;
+	var temp1 = "-" + ( (20+parseInt(resolution.options[resolution.selectedIndex].value, 10))/2 ) + "px";
+	var temp2 = 20+parseInt(resolution.options[resolution.selectedIndex].value, 10) + "px";
+	document.getElementById("wrap").style.marginLeft = temp1;
+	document.getElementById("wrap").style.width = temp2;
+}
+
+</script>
+
+</head>
+<body>
+
+<div id="wrap">
+	
+	<div id="main">
+		<center> <applet id="applet1" code='sv.editor.AppGraphRedactor.class' archive='Classes.jar' width=800 height=600></applet> </center>
+	</div>
+
+	<div id="resolution">
+		Resolution:
+		<select name="res" onChange="changeResolution(this);">
+			<option value="640" >640x480</option>
+			<option value="800" selected="selected">800x600</option>
+			<option value="1024" >1024x768</option>
+		</select>
+	</div>
+	
+	<div class="clear">
+	</div>
+</div>
+ 
+<div id="footer">
+		<center>
+				<a href="http://www.000webhost.com/" 
+					target="_blank">
+					<img src="http://www.000webhost.com/images/120x60_powered.gif" alt="Web Hosting" width="120" height="60" border="0" />
+				</a>
+		</center>
+</div>
+
+</body>
+</html>

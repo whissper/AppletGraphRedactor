@@ -1,0 +1,50 @@
+<!ELEMENT buildDoc (Graph, Nodes, Edges) >
+<!ELEMENT Graph (graphNode)* >
+<!ELEMENT graphNode (graphNodeID, linkedNodes) >
+<!ELEMENT graphNodeID (#PCDATA) >
+<!ELEMENT linkedNodes (linkedNodeID)* >
+<!ELEMENT linkedNodeID (#PCDATA) >
+<!ELEMENT Nodes (Node)* >
+<!ELEMENT Node (NodeID, NodeMemoryParameters, NodeGraphicParameters) >
+<!ELEMENT NodeID (#PCDATA) >
+<!ELEMENT NodeMemoryParameters (nMain, nAdditional, nCalculated) >
+<!ELEMENT nMain (nParamType, nParamU, nParamAngle) >
+<!ELEMENT nParamType (#PCDATA) >
+<!ELEMENT nParamU (#PCDATA) >
+<!ELEMENT nParamAngle (#PCDATA) >
+<!ELEMENT nAdditional (nParamPG, nParamQG, nParamPL, nParamQL) >
+<!ELEMENT nParamPG (#PCDATA) >
+<!ELEMENT nParamQG (#PCDATA) >
+<!ELEMENT nParamPL (#PCDATA) >
+<!ELEMENT nParamQL (#PCDATA) >
+<!ELEMENT nCalculated (nResU, nResAngle, nResPG, nResQG) >
+<!ELEMENT nResU (#PCDATA) >
+<!ELEMENT nResAngle (#PCDATA) >
+<!ELEMENT nResPG (#PCDATA) >
+<!ELEMENT nResQG (#PCDATA) >
+<!ELEMENT NodeGraphicParameters (nBounds) >
+<!ELEMENT nBounds (nLocation, nSize) >
+<!ELEMENT nLocation (nCoordX, nCoordY) >
+<!ELEMENT nCoordX (#PCDATA) >
+<!ELEMENT nCoordY (#PCDATA) >
+<!ELEMENT nSize (nWidth, nHeight) >
+<!ELEMENT nWidth (#PCDATA) >
+<!ELEMENT nHeight (#PCDATA) >
+<!ELEMENT Edges (Edge)* >
+<!ELEMENT Edge (EdgeID, EdgeMemoryParameters) >
+<!ELEMENT EdgeID (#PCDATA) >
+<!ELEMENT EdgeMemoryParameters (eMain, eAdditional, eConnection, eCalculated) >
+<!ELEMENT eMain (eParamR, eParamX, eParamTap) >
+<!ELEMENT eParamR (#PCDATA) >
+<!ELEMENT eParamX (#PCDATA) >
+<!ELEMENT eParamTap (#PCDATA) >
+<!ELEMENT eAdditional EMPTY >
+<!ELEMENT eConnection (firstNodeID, lastNodeID) >
+<!ELEMENT firstNodeID (#PCDATA) >
+<!ELEMENT lastNodeID (#PCDATA) >
+<!ELEMENT eCalculated (eResPF, eResQF, eResPT, eResQT) >
+<!ELEMENT eResPF (#PCDATA) >
+<!ELEMENT eResQF (#PCDATA) >
+<!ELEMENT eResPT (#PCDATA) >
+<!ELEMENT eResQT (#PCDATA) >
+
